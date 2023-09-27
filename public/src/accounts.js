@@ -7,11 +7,13 @@ function sortAccountsByLastName(accounts) {
   return accounts;
 }
 
+function getFullName(account) {
+  const {name: {first, last} } = account;
+  return `${first} ${last}`;
+}
+
 function getAccountFullNames(accounts) {
-  return accounts.map(account => {
-    const {name: {first, last} } = account;
-    return `${first} ${last}`;
-  });
+  return accounts.map(account => getFullName(account));
 }
 
 // NOTE: YOU DON'T HAVE TO EDIT THE FUNCTIONS BELOW
